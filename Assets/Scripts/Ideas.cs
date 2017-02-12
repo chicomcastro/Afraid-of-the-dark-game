@@ -9,6 +9,7 @@
  * -- Implementar a barra de HP (slide bar do Unity mesmo)
  * -- Ir atrás de fazer as fases
  * -- Elaborar os puzzles
+ * -- Ver se é melhor mover pelo transforme.Translate() ou pelo rb.position / rb.velocity (melhor mecânica?);
  * 
  * 
  * 
