@@ -13,5 +13,17 @@ public class playerMovement : MonoBehaviour {
 
 		// Moving
 		transform.position += move * speed * Time.deltaTime;
+
+		InvertPlayerSprite (move);
+	}
+
+	void InvertPlayerSprite (Vector3 move)
+	{
+		if (move.x > 0) {
+			gameObject.GetComponent<SpriteRenderer> ().flipX = false;
+		} else if (move.x < 0) {
+			gameObject.GetComponent<SpriteRenderer> ().flipX = true;
+		}
+			
 	}
 }

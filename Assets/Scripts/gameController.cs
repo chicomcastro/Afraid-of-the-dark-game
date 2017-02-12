@@ -19,6 +19,11 @@ public class gameController : MonoBehaviour {
 	// About UI
 	public Slider healthBar;
 
+	void Awake ()
+	{
+		Time.timeScale = 1;
+	}
+
 	void Start ()
 	{
 		// Setting the player gameobject
@@ -69,5 +74,6 @@ public class gameController : MonoBehaviour {
 	void GameOver ()
 	{
 		gameObject.GetComponent<fader> ().BeginFade (1);
+		Time.timeScale = 1 - Time.timeScale;
 	}
 }

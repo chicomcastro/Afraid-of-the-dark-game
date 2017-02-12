@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerFollower : MonoBehaviour {
 
 	GameObject cam, player;
+	public GameObject endLimit;
 
 	Vector3 initialPosition;
 
@@ -41,6 +42,8 @@ public class playerFollower : MonoBehaviour {
 		// Proofreading cam position to avoid bugs on camera moving
 		if (cam.transform.position.x < initialPosition.x)
 			cam.transform.position = initialPosition;
+		if (cam.transform.position.x >= endLimit.transform.position.x)
+			cam.transform.position = new Vector3 (endLimit.transform.position.x, cam.transform.position.y, cam.transform.position.z);
 	}
 
 	void OnTriggerExit2D (Collider2D other)
