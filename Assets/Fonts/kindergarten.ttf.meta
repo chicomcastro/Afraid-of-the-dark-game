@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: de4440ae30712904abdc6e2324f1ed3b
+timeCreated: 1486926394
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: kindergarten
+  fontNames:
+  - kindergarten
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
