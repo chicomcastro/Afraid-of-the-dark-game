@@ -8,7 +8,7 @@ public class gameController : MonoBehaviour {
 	GameObject player;
 
 	// About time
-	float time, deltaTime = 0.5f;
+	float deltaTime = 0.5f;
 
 	// About health
 	public float HP;
@@ -29,9 +29,6 @@ public class gameController : MonoBehaviour {
 		// Setting the player gameobject
 		player = GameObject.FindGameObjectWithTag ("Player");
 
-		// Setting up initial reference of time
-		time = Time.time;
-	
 		// Setting HP stuff
 		HP = maxLife;
 
@@ -77,8 +74,8 @@ public class gameController : MonoBehaviour {
 		Time.timeScale = 1 - Time.timeScale;
 	}
 
-    public void LevelOver() {
-        StartCoroutine(callFadeOut(2));        
+	public void LevelOver(int temp) {
+        StartCoroutine(callFadeOut(temp));        
     }
 
     IEnumerator callFadeOut(float x) {

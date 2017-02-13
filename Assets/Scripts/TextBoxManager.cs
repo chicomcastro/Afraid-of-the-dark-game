@@ -52,6 +52,7 @@ public class TextBoxManager : MonoBehaviour {
 
         if (currentLine == endAtLine) {
             textBox.SetActive(false);
+			theText.text = "";
             stopPlayerMov = false;
             isActive = false;
         } else {

@@ -13,6 +13,18 @@ public class TutorialLevel : MonoBehaviour {
     private playerMovement playerMov;
     private bool didntTookDamageYet = true;
     public GameObject endOfLevel;
+
+	public Texture2D startGameImage;
+	public Texture2D endGameImage;
+	private Texture2D aux;
+
+	void Awake()
+	{
+		aux = GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture;
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = startGameImage;
+		_gamecontrol.GetComponent<fader> ().BeginFade (-1);
+	}
+
     // Use this for initialization
     void Start() {
         gamecontrol = _gamecontrol.GetComponent<gameController>();
@@ -21,7 +33,7 @@ public class TutorialLevel : MonoBehaviour {
         playerMov.canMove = false;
         //Debug.Log(player.GetComponent<playerMovement>().canMove);
         StartCoroutine(esperaxseg(2));
-
+		_gamecontrol.GetComponent<fader> ().gameOverTexture = aux;
     }
 
     // Update is called once per frame
@@ -52,7 +64,8 @@ public class TutorialLevel : MonoBehaviour {
 
     void CallEndOfLevel() {
         textManager.SelectText(lvlText);
-        textManager.ShowLines(2, 3, false);
-        gamecontrol.LevelOver();
+		textManager.ShowLines(2, 3, false);
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = endGameImage;
+		gamecontrol.LevelOver(4);
     }
 }
