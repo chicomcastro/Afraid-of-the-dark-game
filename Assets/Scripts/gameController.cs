@@ -68,7 +68,7 @@ public class gameController : MonoBehaviour {
 		return value / maxLife;
 	}
 
-	void GameOver ()
+	public void GameOver ()
 	{
 		gameObject.GetComponent<fader> ().BeginFade (1);
 		Time.timeScale = 1 - Time.timeScale;
