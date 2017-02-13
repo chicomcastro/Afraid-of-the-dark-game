@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4782039506581186}
   - component: {fileID: 212318485786044030}
   - component: {fileID: 58462091107773740}
-  - component: {fileID: 58822923726303846}
   - component: {fileID: 114411497719069488}
   m_Layer: 0
   m_Name: Poste
@@ -87,20 +86,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 0.75
---- !u!58 &58822923726303846
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1131812373754498}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.5}
-  serializedVersion: 2
-  m_Radius: 1.2
 --- !u!108 &108201583437794080
 Light:
   m_ObjectHideFlags: 1
