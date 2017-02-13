@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour {
 	
-	float speed = 2.0f;
+	float speed = 3.0f;
+	float delta_time = 0.1f;
+	int i = 1;
+	float time;
+	bool ismoving = false;
+	bool startedMoving = false;
     public bool canMove = true;
+	public Sprite[] animacao;
+	SpriteRenderer spriteRenderer;
+	void Start(){
+		spriteRenderer = gameObject.GetComponent<SpriteRenderer> ();
+		spriteRenderer.sprite = animacao [0];
+		time = Time.time;
+	}
 	void Update() {
     
 		// Defining moving direction
@@ -14,11 +26,23 @@ public class playerMovement : MonoBehaviour {
         // Moving
         if (canMove) {
             transform.position += move * speed * Time.deltaTime;
+			if (move.magnitude != 0) {
+				if (Time.time - time > delta_time) {
+					spriteRenderer.sprite = animacao [i];
+					if (i == 2)
+						i = 0;
+					i++;
+					time = Time.time;
+				} 
+			}
+			else
+				spriteRenderer.sprite = animacao [0];
 
             InvertPlayerSprite(move);
+
         }
 	}
-
+		
 	void InvertPlayerSprite (Vector3 move)
 	{
 		if (move.x > 0) {
