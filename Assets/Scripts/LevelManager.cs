@@ -18,10 +18,11 @@ public class LevelManager : MonoBehaviour {
 		postes [13].SetActive(false);
 		postes [14].SetActive(false);
 		postes [15].SetActive(false);
+
 	}
 	// Update is called once per frame
 	void Update () {
-
+		GameObject.FindGameObjectWithTag ("Player").GetComponent<playerMovement> ().canMove = true;
 		if (apertouDijuntor1) {
 			postes [0].SetActive(true);
 			postes [1].SetActive(true);
@@ -44,9 +45,9 @@ public class LevelManager : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().shouldTakeDamage = true;
 		}
 
-		//if (acabou) {
-		//	GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().LevelOver ();
-		//}
+		if (acabou) {
+			GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().LevelOver ();
+		}
 		
 	}
 }
