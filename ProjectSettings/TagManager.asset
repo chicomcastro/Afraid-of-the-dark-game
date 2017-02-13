@@ -9,6 +9,7 @@ TagManager:
   - IL
   - Manager
   - END
+  - DijuntorF3
   layers:
   - Default
   - TransparentFX

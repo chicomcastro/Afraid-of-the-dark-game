@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dijuntor2 : MonoBehaviour {
 
 	// Use this for initialization
+	public GameObject[] alavanca;
 	void Start () {
 		
 	}

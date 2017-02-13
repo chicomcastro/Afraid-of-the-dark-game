@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dijuntor1 : MonoBehaviour {
+public class HPF3 : MonoBehaviour {
 
-
-	public Sprite[] alavanca;
 	// Use this for initialization
 	void Start () {
 		
 	}
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		GameObject.FindGameObjectWithTag("Manager").GetComponent<LevelManager>().apertouDijuntor1 = true;
+	void OnTriggerEnter2D(Collider2D col){
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().HP = 100;
 		gameObject.SetActive (false);
 	}
 	// Update is called once per frame
 	void Update () {
-
-
 		
 	}
 }
