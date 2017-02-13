@@ -76,4 +76,14 @@ public class gameController : MonoBehaviour {
 		gameObject.GetComponent<fader> ().BeginFade (1);
 		Time.timeScale = 1 - Time.timeScale;
 	}
+
+    public void LevelOver() {
+        StartCoroutine(callFadeOut(2));        
+    }
+
+    IEnumerator callFadeOut(float x) {
+        player.GetComponent<playerMovement>().canMove = false;
+        yield return new WaitForSeconds(x);
+        gameObject.GetComponent<fader>().BeginFade(1);
+    }
 }
