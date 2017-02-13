@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class playerFollower : MonoBehaviour {
 
-	GameObject cam, player;
-	public GameObject endLimit;
-
-	Vector3 initialPosition;
+	GameObject cam, player, superiorLimit, inferiorLimit;
 
 	float speed = 1.5f, dt;
 
@@ -15,11 +12,11 @@ public class playerFollower : MonoBehaviour {
 
 	void Start ()
 	{
+		// Setting some game objects to be used
 		cam = GameObject.FindGameObjectWithTag ("MainCamera");
 		player = GameObject.FindGameObjectWithTag ("Player");
-
-		// Setting initial position of the camera
-		initialPosition = cam.transform.position;
+		superiorLimit = GameObject.FindGameObjectWithTag ("SL");
+		inferiorLimit = GameObject.FindGameObjectWithTag ("IL");
 
 		// Initializing some variables
 		cameraShouldMove = false;
@@ -33,17 +30,15 @@ public class playerFollower : MonoBehaviour {
 		// Seeing what direction we should move the camera
 		Vector3 relativePosition = player.transform.position - cam.transform.position;
 
-		if (cameraShouldMove && cam.transform.position.x >= initialPosition.x)
+		if (cameraShouldMove)
 		{
 			// Moving the camera
-			cam.transform.Translate (relativePosition.x * speed * dt, 0, 0);
+			cam.transform.position = new Vector3 (
+				Mathf.Clamp (cam.transform.position.x + relativePosition.x * speed * dt, superiorLimit.transform.position.x, inferiorLimit.transform.position.x),
+				Mathf.Clamp (cam.transform.position.y + relativePosition.y * speed * dt, inferiorLimit.transform.position.y, superiorLimit.transform.position.y),
+				cam.transform.position.z
+			);
 		}
-
-		// Proofreading cam position to avoid bugs on camera moving
-		if (cam.transform.position.x < initialPosition.x)
-			cam.transform.position = initialPosition;
-		if (cam.transform.position.x >= endLimit.transform.position.x)
-			cam.transform.position = new Vector3 (endLimit.transform.position.x, cam.transform.position.y, cam.transform.position.z);
 	}
 
 	void OnTriggerExit2D (Collider2D other)
