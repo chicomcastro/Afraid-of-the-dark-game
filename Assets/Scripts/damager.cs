@@ -15,6 +15,17 @@ public class damager : MonoBehaviour {
 		}
 	}
 
+	// When entering a light spot, the player is safe
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if (other.tag == "Player")
+		{
+			GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().shouldTakeDamage = false;
+
+			GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().damageCooldownTime = Time.time;
+		}
+	}
+
 	// Under a light spot, the player is safe
 	void OnTriggerStay2D (Collider2D other)
 	{

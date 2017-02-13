@@ -47,7 +47,7 @@ public class gameController : MonoBehaviour {
 		healthBar.value = ReturnValue(HP);
 
 		// Taking damage of the dark
-		if (Time.time - damageCooldownTime >= deltaTime && GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().shouldTakeDamage)
+		if (Time.time - damageCooldownTime >= deltaTime && shouldTakeDamage)
 		{
 			// Taking damage from player through DealDamage() function on GameController script
 			DealDamage (damage);
