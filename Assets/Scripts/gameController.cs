@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameController : MonoBehaviour {
 
@@ -9,12 +10,16 @@ public class gameController : MonoBehaviour {
 
 	// About time
 	float deltaTime = 0.5f;
+	float time;
 
 	// About health
 	public float HP;
 	float maxLife = 100.0f;
 	public bool shouldTakeDamage = false;
 	public float damageCooldownTime, damage = 15.0f;
+	public int nextSceneNumber, currentSceneNumber;
+
+	bool terminou = false;
 
 	// About UI
 	public Slider healthBar;
@@ -36,10 +41,13 @@ public class gameController : MonoBehaviour {
 		healthBar.value = ReturnValue(HP);
 		shouldTakeDamage = false;
 		damageCooldownTime = Time.time;
+
+		time = Time.time;
 	}
 
 	void Update ()
 	{
+
 		// Setting HP at each frame
 		healthBar.value = ReturnValue(HP);
 
@@ -70,8 +78,15 @@ public class gameController : MonoBehaviour {
 
 	public void GameOver ()
 	{
+		if (!terminou){
+			time = Time.time;
+			terminou = true;
+		}
 		gameObject.GetComponent<fader> ().BeginFade (1);
 		Time.timeScale = 1 - Time.timeScale;
+		if (Time.time - time > 3)
+			SceneManager.LoadScene (currentSceneNumber);
+
 	}
 
 	public void LevelOver(int temp) {
@@ -82,5 +97,6 @@ public class gameController : MonoBehaviour {
         player.GetComponent<playerMovement>().canMove = false;
         yield return new WaitForSeconds(x);
         gameObject.GetComponent<fader>().BeginFade(1);
+		SceneManager.LoadScene (nextSceneNumber);
     }
 }

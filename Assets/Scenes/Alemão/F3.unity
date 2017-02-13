@@ -4851,6 +4851,16 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 61
       objectReference: {fileID: 0}
+    - target: {fileID: 114723789367033384, guid: 4ed5391b2b5d814448d8c1f9f45b810e,
+        type: 2}
+      propertyPath: nextSceneNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114723789367033384, guid: 4ed5391b2b5d814448d8c1f9f45b810e,
+        type: 2}
+      propertyPath: currentSceneNumber
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ed5391b2b5d814448d8c1f9f45b810e, type: 2}
   m_IsPrefabParent: 0

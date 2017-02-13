@@ -18,7 +18,6 @@ public class F3levelManager : MonoBehaviour {
 	private TextBoxManager textManager;
 	private gameController gamecontrol;
 	private playerMovement playerMov;
-	private bool didntTookDamageYet = true;
 	public GameObject endOfLevel;
 
 	void Start () {
