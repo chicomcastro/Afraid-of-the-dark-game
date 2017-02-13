@@ -1315,6 +1315,7 @@ MonoBehaviour:
   - {fileID: 1363559432}
   apertouDijuntor1: 0
   apertouDijuntor2: 0
+  acabou: 0
 --- !u!4 &405882993
 Transform:
   m_ObjectHideFlags: 0
@@ -1998,6 +1999,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1131812373754498, guid: 0f5ba37fed4c41549a708ff93bd14994,
     type: 2}
   m_PrefabInternal: {fileID: 778649055}
+--- !u!114 &778649060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778649056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b5045b04523db478b21e6dddb27a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &794570991 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4782039506581186, guid: 0f5ba37fed4c41549a708ff93bd14994,

@@ -19,6 +19,8 @@ public class F1Manager : MonoBehaviour {
 	public bool apertouDijuntor1;
 	public bool apertouDijuntor2;
 
+	public bool acabou = false;
+
 
 	void Start () {
 		postes [0].SetActive(false); // A 7
@@ -58,6 +60,9 @@ public class F1Manager : MonoBehaviour {
 			postes [4].SetActive(true);
 			postes [2].SetActive(true);
 		}
+
+		if (acabou)
+			CallEndOfLevel ();
 	}
 
 	IEnumerator esperaxseg(float x) {

@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class END : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	void OnTriggerEnter2D(Collider2D col)
+	void OnTriggerEnter2D(Collider2D coll)
 	{
-		GameObject.FindGameObjectWithTag("Manager").GetComponent<LevelManager>().acabou = true;
+		if (coll.tag == "Player") {
+			GameObject.FindGameObjectWithTag ("Manager").GetComponent<LevelManager> ().acabou = true;
+		}
 	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
