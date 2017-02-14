@@ -35,8 +35,44 @@
  * 
  * 
  * 
+ * Anotação 14/fev/2016 - Chico
+ * 
+ * -- Os players que testaram a versão beta reclamaram:
+ * - Confusão do mapa (problema 1)
+ * - Gráficos (problema 2)
+ * - Bug no game over (problema 3)
+ * 
+ * PROBLEMA 1:
+ * 
+ * 	Possível correção: colocar uma visão da câmera sobre o mapa todo para evitar deixar o player perdido
  * 
  * 
+ * PROBLEMA 2:
+ * 
+ * 	Fazer as coisas no Illustrator / outra ferramenta (aprender melhor)
+ * 
+ * O que tem pra mudar ainda?
+ * * Se der, pode-se mudar as caixas
+ * * Player
+ * * Botões
+ * * Nome do jogo
+ * * Instruções
+ * * Game over
+ * 
+ * 
+ * PROBLEMA 3: corrigido!
+ * 
+ * 
+ * O projeto está no geral desorganizado devido à pressa final e inexperiência da equipe.
+ * 
+ * 
+ * Ideias para implementar:
+ * 
+ * Aprender a fazer animação para botar no MENU e fazer uma cutscene no início e no final (provavelmente vai dar um up np jogo)
+ * 
+ * Fazer versão mobile
+ * 
+ * Conseguir alguns sons para luzes e pegar itens
  * 
  * 
  * 

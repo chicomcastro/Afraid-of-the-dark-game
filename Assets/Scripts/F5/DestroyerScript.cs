@@ -6,6 +6,6 @@ public class DestroyerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D coll)
 	{
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController>().GameOver ();
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().HP = 0;
 	}
 }

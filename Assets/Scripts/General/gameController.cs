@@ -19,7 +19,7 @@ public class gameController : MonoBehaviour {
 	public float damageCooldownTime, damage = 15.0f;
 	public int nextSceneNumber, currentSceneNumber;
 
-	bool terminou = false;
+	bool terminou;
 
 	// About UI
 	public Slider healthBar;
@@ -40,6 +40,7 @@ public class gameController : MonoBehaviour {
 		// Initializing some variable
 		healthBar.value = ReturnValue(HP);
 		shouldTakeDamage = false;
+		terminou = false;
 		damageCooldownTime = Time.time;
 
 		time = Time.time;
@@ -84,7 +85,7 @@ public class gameController : MonoBehaviour {
 		}
 		gameObject.GetComponent<fader> ().BeginFade (1);
 		Time.timeScale = 1 - Time.timeScale;
-		if (Time.time - time > 3)
+		if (Time.time - time > 2)
 			SceneManager.LoadScene (currentSceneNumber);
 
 	}
