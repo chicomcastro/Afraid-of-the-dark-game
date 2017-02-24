@@ -65,6 +65,9 @@ public class gameController : MonoBehaviour {
 		// Checking if player if alive
 		if (HP <= 0)
 			GameOver ();
+
+		if (Input.GetKeyDown (KeyCode.Escape))
+			SceneManager.LoadScene ("Menu");
 	}
 
 	public void DealDamage (float damage)

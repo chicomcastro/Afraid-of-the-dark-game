@@ -8,11 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Alem\xE3o/Menu.unity"
   - enabled: 1
+    path: Assets/Scenes/Chico/InitialCutscene.unity
+  - enabled: 1
     path: Assets/Scenes/Chico/TutorialScene.unity
   - enabled: 1
     path: Assets/Scenes/Chico/F1_Backup.unity
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/Alem\xE3o/F2.unity"
+  - enabled: 1
+    path: "Assets/Scenes/Alem\xE3o/F2/F2.unity"
   - enabled: 1
     path: "Assets/Scenes/Alem\xE3o/F3.unity"
   - enabled: 1

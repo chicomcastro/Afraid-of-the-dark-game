@@ -42,7 +42,7 @@ public class F1Manager : MonoBehaviour {
 		playerMov = player.GetComponent<playerMovement>();
 		playerMov.canMove = false;
 		//Debug.Log(player.GetComponent<playerMovement>().canMove);
-		StartCoroutine(esperaxseg(2));
+		StartCoroutine(esperaxseg(8));
 	}
 	// Update is called once per frame
 	void Update () {
@@ -82,7 +82,7 @@ public class F1Manager : MonoBehaviour {
 	public void CallEndOfLevel() {
 		textManager.SelectText(lvlText);
 		textManager.ShowLines(4, 5, false);
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = endGameImage;
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<Animator> ().SetBool ("finish", true);
 		gamecontrol.LevelOver(4);
 	}
 }

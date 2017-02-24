@@ -40,7 +40,7 @@ public class F4Manager : MonoBehaviour {
 
 		float dT = Time.deltaTime;
 
-		if (Time.time - time > 1.0f && !controlling[0]) {
+		if (Time.time - time > 3.0f && !controlling[0]) {
 			StartCoroutine(esperaxseg(1, 0, 2));
 			player.GetComponent<SpriteRenderer> ().flipX = true;
 
@@ -51,7 +51,7 @@ public class F4Manager : MonoBehaviour {
 
 
 
-		if (Time.time - time > 8.0f && controlling[0] && !controlling[1]) {
+		if (Time.time - time > 10.0f && controlling[0] && !controlling[1]) {
 
 			StartCoroutine(esperaxseg(1, 3, 7));
 			player.GetComponent<SpriteRenderer> ().flipX = false;
@@ -62,7 +62,7 @@ public class F4Manager : MonoBehaviour {
 		}
 
 
-		if (Time.time - time > 15.0f && !controlling[2]) {
+		if (Time.time - time > 17.0f && !controlling[2]) {
 			controlling [2] = true;
 			pisca = true;
 		}
@@ -76,7 +76,7 @@ public class F4Manager : MonoBehaviour {
 			stop = true;
 
 
-		if (Time.time - time > 3.0f && controlling[2] && !controlling[3]) {
+		if (Time.time - time > 5.0f && controlling[2] && !controlling[3]) {
 			StartCoroutine(esperaxseg(1, 8, 9));
 
 			controlling [3] = true;
@@ -101,7 +101,7 @@ public class F4Manager : MonoBehaviour {
 	void CallEndOfLevel() {
 		textManager.SelectText(lvlText);
 		textManager.ShowLines(10, 12, false);
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = endGameImage;
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<Animator> ().SetBool ("finish", true);
 		gamecontrol.LevelOver(4);
 	}
 }

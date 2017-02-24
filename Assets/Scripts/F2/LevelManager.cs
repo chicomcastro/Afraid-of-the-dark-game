@@ -28,13 +28,14 @@ public class LevelManager : MonoBehaviour {
 		postes [14].SetActive(false);
 		postes [15].SetActive(false);
 		postes [16].SetActive(false);
+		postes [17].SetActive(false);
 
 		gamecontrol = _gamecontrol.GetComponent<gameController>();
 		textManager = _textManager.GetComponent<TextBoxManager>();
 		playerMov = player.GetComponent<playerMovement>();
 		playerMov.canMove = false;
 		//Debug.Log(player.GetComponent<playerMovement>().canMove);
-		StartCoroutine(esperaxseg(2));
+		StartCoroutine(esperaxseg(8));
 
 	}
 	// Update is called once per frame
@@ -58,15 +59,15 @@ public class LevelManager : MonoBehaviour {
 			postes [10].SetActive(false);
 			postes [11].SetActive(false);
 			postes [12].SetActive(false);
+			postes [17].SetActive(true);
 			GameObject.FindGameObjectWithTag ("GameController").GetComponent<gameController> ().shouldTakeDamage = true;
 		}
 
 		if (acabou) {
 			textManager.SelectText(lvlText);
 			textManager.ShowLines(2, 3, false);
-			GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = fadeinpic;
-			gamecontrol.LevelOver(1);
-
+			GameObject.FindGameObjectWithTag ("GameController").GetComponent<Animator> ().SetBool ("finish", true);
+			gamecontrol.LevelOver(4);
 		}
 		
 	}

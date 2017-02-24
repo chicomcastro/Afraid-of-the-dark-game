@@ -22,12 +22,16 @@ public class TextBoxManager : MonoBehaviour {
 
     private playerMovement playerBehaviour;
 
+	float time;
+
     // Use this for initialization
     void Start() {
         isActive = false;
         stopPlayerMov = true;
         textBox.SetActive(false);
         playerBehaviour = player.GetComponent<playerMovement>();
+
+		time = Time.time;
 
         /*if (textFile != null) {
             textLines = (textFile.text.Split('\n'));
@@ -59,8 +63,9 @@ public class TextBoxManager : MonoBehaviour {
             theText.text = textLines[currentLine];
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space)){ // || (textBox.activeInHierarchy && Time.time - time > 4.0f)) {
             currentLine++;
+			time = Time.time;
         }
 
        

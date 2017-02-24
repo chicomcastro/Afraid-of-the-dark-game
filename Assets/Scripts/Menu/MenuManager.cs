@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
+	public GameObject instructions;
+
+	void Start ()
+	{
+		instructions.SetActive (false);
+	}
+
 	public void LoadLevel ()
 	{
-		SceneManager.LoadScene ("TutorialScene");
+		SceneManager.LoadScene ("InitialCutscene");
+	}
+
+	public void How ()
+	{
+		instructions.SetActive (!instructions.activeInHierarchy);
 	}
 
 	public void Exit ()

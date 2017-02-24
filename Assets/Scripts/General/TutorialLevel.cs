@@ -43,7 +43,7 @@ public class TutorialLevel : MonoBehaviour {
             didntTookDamageYet = false;
             StartCoroutine(esperayseg(2));        
         } 
-        if((player.transform.position.x > endOfLevel.transform.position.x)) {
+		if((Mathf.Abs(player.transform.position.x - endOfLevel.transform.position.x) < 1.0f)) {
             CallEndOfLevel();
         }
     }
@@ -65,7 +65,7 @@ public class TutorialLevel : MonoBehaviour {
     void CallEndOfLevel() {
         textManager.SelectText(lvlText);
 		textManager.ShowLines(2, 3, false);
-		GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = endGameImage;
+		GameObject.FindGameObjectWithTag ("GameController").GetComponent<Animator> ().SetBool ("finish", true);
 		gamecontrol.LevelOver(4);
     }
 }

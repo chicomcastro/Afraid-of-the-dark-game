@@ -8,7 +8,7 @@ public class playerFollower : MonoBehaviour {
 
 	float speed = 1.5f, dt;
 
-	bool cameraShouldMove;
+	public bool cameraShouldMove;
 
 	void Start ()
 	{
@@ -41,15 +41,15 @@ public class playerFollower : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if (other.tag == "Player")
+			cam.GetComponent<Animator> ().enabled = false;
+	}
+
 	void OnTriggerExit2D (Collider2D other)
 	{
 		if (other.tag == "Player")
 			cameraShouldMove = true;
-	}
-
-	void OnTriggerEntert2D (Collider2D other)
-	{
-		if (other.tag == "Player")
-			cameraShouldMove = false;
 	}
 }

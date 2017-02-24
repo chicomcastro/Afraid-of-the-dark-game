@@ -34,7 +34,7 @@ public class F3levelManager : MonoBehaviour {
 		playerMov = player.GetComponent<playerMovement>();
 		playerMov.canMove = false;
 		//Debug.Log(player.GetComponent<playerMovement>().canMove);
-		StartCoroutine(esperaxseg(2));
+		StartCoroutine(esperaxseg(6));
 	}
 	
 	// Update is called once per frame
@@ -48,7 +48,7 @@ public class F3levelManager : MonoBehaviour {
 		if (acabou) {
 			textManager.SelectText(lvlText);
 			textManager.ShowLines(5, 7, false);
-			GameObject.FindGameObjectWithTag ("GameController").GetComponent<fader> ().gameOverTexture = fadeinpic;
+			GameObject.FindGameObjectWithTag ("GameController").GetComponent<Animator> ().SetBool ("finish", true);
 			gamecontrol.LevelOver(5);
 		}
 		
